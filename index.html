@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SketchUp Russia — русскоязычное сообщество SketchUp</title>
+<meta name="description" content="Русскоязычное сообщество SketchUp. Сайт в работе, а пока мы во ВКонтакте: vk.com/sketchup">
+<link rel="canonical" href="https://sketchuprussia.ru/">
+<meta property="og:title" content="SketchUp Russia">
+<meta property="og:description" content="Русскоязычное сообщество SketchUp. Сайт в работе, а пока мы во ВКонтакте.">
+<meta property="og:url" content="https://sketchuprussia.ru/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M16 18V4' stroke='%233b6fd6'/%3E%3Cpath d='M16 18l12 7' stroke='%23d6453d'/%3E%3Cpath d='M16 18L4 25' stroke='%233f9d4d'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #f4f1ea; --ink: #1d1f22; --muted: #6b6f76; --line: #1d1f22;
+    --face: rgba(255,255,255,.72); --hair: rgba(29,31,34,.14);
+    --r: #d6453d; --g: #3f9d4d; --b: #3b6fd6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a; --ink: #eceae4; --muted: #9a9ea6; --line: #eceae4;
+      --face: rgba(36,40,47,.78); --hair: rgba(236,234,228,.16);
+      --r: #ef6a61; --g: #5cc06b; --b: #6b97f0;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: flex; flex-direction: column; min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    gap: clamp(24px, 6vw, 80px); padding: 40px 24px; flex-wrap: wrap;
+    max-width: 1080px; margin: 0 auto; width: 100%;
+  }
+  .model { flex: 1 1 300px; max-width: 440px; }
+  .model svg { width: 100%; height: auto; display: block; }
+  .text { flex: 1 1 320px; max-width: 460px; }
+  .tag {
+    font: 600 12px/1 ui-monospace, "SF Mono", Consolas, monospace;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+    margin: 0 0 18px;
+  }
+  h1 {
+    font-size: clamp(38px, 7vw, 62px); line-height: 1; letter-spacing: -.03em;
+    margin: 0 0 18px; font-weight: 750;
+  }
+  h1 span { color: var(--muted); font-weight: 400; }
+  p { margin: 0 0 28px; color: var(--muted); max-width: 34em; }
+  p b { color: var(--ink); font-weight: 600; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px; border: 1.5px solid var(--ink); border-radius: 2px;
+    color: var(--ink); text-decoration: none; font-weight: 600;
+    transition: background .15s, color .15s;
+  }
+  .btn:hover, .btn:focus-visible { background: var(--ink); color: var(--bg); outline: none; }
+  .btn i { font-style: normal; transition: transform .15s; }
+  .btn:hover i { transform: translateX(4px); }
+  footer {
+    padding: 18px 24px; border-top: 1px solid var(--hair);
+    font-size: 13px; color: var(--muted); text-align: center;
+  }
+  .ax { stroke-width: 2; stroke-linecap: round; fill: none; }
+  .edge { stroke: var(--line); stroke-width: 1.6; stroke-linejoin: round; fill: var(--face); }
+  .hid { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 5; opacity: .45; fill: none; }
+  .lbl { font: 600 11px ui-monospace, Consolas, monospace; }
+  @media (prefers-reduced-motion: no-preference) {
+    .box { animation: push 5s ease-in-out infinite alternate; transform-origin: 200px 200px; }
+    @keyframes push { from { transform: translateY(0); } to { transform: translateY(-6px); } }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="model" aria-hidden="true">
+    <svg viewBox="0 0 400 320" role="img">
+      <!-- оси -->
+      <path class="ax" stroke="var(--b)" d="M200 200V34"/>
+      <path class="ax" stroke="var(--r)" d="M200 200l147.2 85"/>
+      <path class="ax" stroke="var(--g)" d="M200 200L52.8 285"/>
+      <text class="lbl" x="208" y="42" fill="var(--b)">Z</text>
+      <text class="lbl" x="352" y="298" fill="var(--r)">X</text>
+      <text class="lbl" x="38" y="298" fill="var(--g)">Y</text>
+      <g class="box">
+        <!-- скрытые рёбра -->
+        <path class="hid" d="M200 200V120M200 200l77.9 45M200 200l-77.9 45"/>
+        <!-- грани -->
+        <path class="edge" d="M122.1 245L200 290V210L122.1 165Z"/>
+        <path class="edge" d="M277.9 245L200 290V210L277.9 165Z"/>
+        <path class="edge" d="M200 120L277.9 165L200 210L122.1 165Z"/>
+      </g>
+    </svg>
+  </div>
+  <div class="text">
+    <div class="tag">sketchuprussia.ru</div>
+    <h1>SketchUp <span>Russia</span></h1>
+    <p>Русскоязычное сообщество SketchUp. <b>Сайт сейчас в работе</b> — а всё живое пока происходит в нашей группе ВКонтакте.</p>
+    <a class="btn" href="https://vk.com/sketchup" rel="noopener">vk.com/sketchup <i>→</i></a>
+  </div>
+</main>
+<footer>SketchUp — товарный знак Trimble Inc. Это сайт сообщества, он не связан с Trimble.</footer>
+</body>
+</html>
